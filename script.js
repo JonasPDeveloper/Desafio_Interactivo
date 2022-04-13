@@ -2,32 +2,29 @@ const montoTope = 100000;
 const min12Cuotas = 70000;
 const min6Cuotas = 45000;
 const min3Cuotas = 20000;
-let cuotaMax = 0;
+let monto;
+let cuotaMax;
 
 do {
-  let monto = parseInt(prompt("Ingrese el total de su compra"));
+  monto = parseInt(prompt("Ingrese el total de su compra"));
 } while (monto > montoTope);
 
-switch (calculador) {
-  case 1:
-    monto <= montoTope && monto > min12Cuotas;
-    cuotaMax = 12;
-    break;
-  case 2:
-    monto <= min12Cuotas && monto > min6Cuotas;
-    cuotaMax = 6;
-    break;
-  case 1:
-    monto <= min6Cuotas && monto > min3Cuotas;
-    cuotaMax = 3;
-    break;
-  default:
-    cuotaMax = 1;
-    break;
+if (monto <= montoTope && monto > min12Cuotas) {
+  cuotaMax = 12;
+} else if (monto <= min12Cuotas && monto > min6Cuotas) {
+  cuotaMax = 6;
+} else if (monto <= min6Cuotas && monto > min3Cuotas) {
+  cuotaMax = 3;
+} else if (monto <= min3Cuotas) {
+  cuotaMax = 1;
 }
+
 let cuotas = parseInt(
   prompt("Ingrese el numero de cuotas en que desea pagar maximo : " + cuotaMax)
 );
+
+cuotaMax = cuotas;
+
 function calculador(monto, cuotas) {
   resultado = monto / cuotas;
   return resultado;
