@@ -15,7 +15,7 @@ if (monto <= montoTope && monto > min12Cuotas) {
   cuotaMax = 6;
 } else if (monto <= min6Cuotas && monto > min3Cuotas) {
   cuotaMax = 3;
-} else if (monto <= min3Cuotas) {
+} else {
   cuotaMax = 1;
 }
 
